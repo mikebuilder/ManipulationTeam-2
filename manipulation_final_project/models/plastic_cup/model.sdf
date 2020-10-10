@@ -1,9 +1,10 @@
 <?xml version="1.0" ?>
 <sdf version="1.5">
   <model name="plastic_cup">
+    <static>true</static>
+
     <link name="link">
       <pose>0 0 0.065 0 0 0</pose>
-      
       <inertial>
         <mass>0.0599</mass>
         <inertia>
@@ -15,7 +16,6 @@
           <izz>3.2876352372798436e-05</izz>
         </inertia>
       </inertial>
-
       <collision name="collision">
         <geometry>
           <mesh>
@@ -43,7 +43,6 @@
           </friction>
         </surface>
       </collision>
-
       <visual name="visual">
         <geometry>
           <mesh>

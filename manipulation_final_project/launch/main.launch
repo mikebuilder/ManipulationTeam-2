@@ -2,17 +2,21 @@
   <!-- Launch the simulation -->
   <include file="$(find panda_simulation)/launch/panda_simulation.launch" />
 
-  <!-- Spawn the table and coffee cup in gazebo -->
-  <node name="spawn_cafe_table_urdf" pkg="gazebo_ros" type="spawn_model"
+  <!-- Spawn the table in gazebo -->
+  <node name="spawn_cafe_table_sdf" pkg="gazebo_ros" type="spawn_model"
   	args="-sdf -file $(find manipulation_final_project)/models/cafe_table/model.sdf -model cafe_table -x 0.7" output="screen" />
 
-  <!-- Spawn the table and coffee cup in gazebo -->
-  <node name="spawn_plastic_cup_urdf" pkg="gazebo_ros" type="spawn_model"
+  <!-- Spawn the plastic cup in gazebo -->
+  <node name="spawn_plastic_cup_sdf" pkg="gazebo_ros" type="spawn_model"
     args="-sdf -file $(find manipulation_final_project)/models/plastic_cup/model.sdf -model plastic_cup -x 0.5 -z 0.755" output="screen" />
 
+  <!-- Spawn the table and coffee cup in gazebo -->
+  <node name="spawn_kinect_sdf" pkg="gazebo_ros" type="spawn_model"
+    args="-sdf -file $(find manipulation_final_project)/models/kinect/model.sdf -model kinect -x 0.5 -z 2 -P 1.57" output="screen" />
+
   <!-- Start the grasp service -->
-  <node name="grasp_point_server" pkg="manipulation_final_project" type="grasp_point_server.py"/>
+  <node name="grasp_point_server" pkg="manipulation_final_project" type="grasp_point_server.py" />
 
   <!-- Start the main node -->
-  <node name="main_py" pkg="manipulation_final_project" type="main.py"/>
+  <node name="main_py" pkg="manipulation_final_project" type="main.py" />
 </launch>

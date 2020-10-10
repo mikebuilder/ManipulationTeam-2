@@ -8,11 +8,11 @@
 
   <!-- Spawn the plastic cup in gazebo -->
   <node name="spawn_plastic_cup_sdf" pkg="gazebo_ros" type="spawn_model"
-    args="-sdf -file $(find manipulation_final_project)/models/plastic_cup/model.sdf -model plastic_cup -x 0.5 -z 0.755" output="screen" />
+    args="-sdf -file $(find manipulation_final_project)/models/plastic_cup/model.sdf -model plastic_cup -x 0.75 -z 0.755" output="screen" />
 
-  <!-- Spawn the table and coffee cup in gazebo -->
+  <!-- Spawn the kinect camera in gazebo -->
   <node name="spawn_kinect_sdf" pkg="gazebo_ros" type="spawn_model"
-    args="-sdf -file $(find manipulation_final_project)/models/kinect/model.sdf -model kinect -x 0.5 -z 2 -P 1.57" output="screen" />
+    args="-sdf -file $(find manipulation_final_project)/models/kinect/model.sdf -model kinect -x0.75 -z 2 -P 1.57" output="screen" />
 
   <!-- Start the grasp service -->
   <node name="grasp_point_server" pkg="manipulation_final_project" type="grasp_point_server.py" />

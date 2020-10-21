@@ -78,7 +78,13 @@ def get_grasp_points(get_grasp_points_request):
 
 
     print("got grasp points, returning and exiting")
-    return GetGraspPointsResponse(graspPoint1, graspPoint2)
+
+    comPoint = Point()
+    comPoint.x = COM[0]
+    comPoint.y = COM[1]
+    comPoint.z = COM[2]
+
+    return GetGraspPointsResponse(comPoint, graspPoint1, graspPoint2)
 
 if __name__ == '__main__':
     rospy.init_node(service_name + "_server")
